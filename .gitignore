@@ -1,0 +1,28 @@
+# Maven
+backend/target/
+
+# Node / frontend build
+frontend/node_modules/
+frontend/node/
+frontend/dist/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env / secrets (never commit credentials)
+.env
+.env.*
+*.local.yml

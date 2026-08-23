@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tms
+    username: tms
+    password: tms
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    schemas: tms
+    default-schema: tms
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
+
+tender:
+  seed:
+    enabled: true
+    data-location: classpath:db/seed/demo-data.json
+    force: false

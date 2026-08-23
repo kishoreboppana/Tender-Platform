@@ -1,0 +1,127 @@
+{
+  "tenant": {
+    "id": "a0000000-0000-4000-8000-000000000001",
+    "code": "demo",
+    "name": "Acme System Integrators (demo)",
+    "status": "ACTIVE",
+    "timezone": "Asia/Kolkata",
+    "databaseMode": "SHARED_DB"
+  },
+  "appUsers": [
+    {
+      "email": "demo@acme.com",
+      "displayName": "Demo User",
+      "active": true
+    }
+  ],
+  "customers": [
+    {
+      "customerCode": "CUS-0001",
+      "name": "National Highways Authority",
+      "customerType": "GOVERNMENT",
+      "contactEmail": "procurement@nhai.gov",
+      "active": true
+    },
+    {
+      "customerCode": "CUS-0002",
+      "name": "NTPC Limited",
+      "customerType": "PSU",
+      "contactEmail": "tenders@ntpc.co.in",
+      "active": true
+    },
+    {
+      "customerCode": "CUS-0003",
+      "name": "State Electricity Board",
+      "customerType": "GOVERNMENT",
+      "contactEmail": "tenders@seb.gov.in",
+      "active": true
+    }
+  ],
+  "businessSequences": [
+    {
+      "sequenceName": "TENDER_ID",
+      "sequenceYear": 2026,
+      "currentValue": 12
+    }
+  ],
+  "tenders": [
+    {
+      "tenderId": "TND-2026-0012",
+      "name": "Highway Package XII",
+      "customerCode": "CUS-0001",
+      "tenderReference": "NHAI/EPC/2026/4412",
+      "tenderType": "OPEN",
+      "estimatedValue": 45000000.0,
+      "currency": "INR",
+      "closingAt": "2026-08-05T17:00:00+05:30",
+      "submissionMode": "PORTAL",
+      "tenderOwnerName": "A. Sharma",
+      "status": "IN_PREPARATION",
+      "priority": "CRITICAL",
+      "approvalStatus": "NOT_STARTED",
+      "health": "RED",
+      "completionPercent": 60,
+      "latestStatusComment": "Awaiting OEM authorization document"
+    },
+    {
+      "tenderId": "TND-2026-0011",
+      "name": "Solar EPC Lot 3",
+      "customerCode": "CUS-0002",
+      "tenderReference": "NTPC/SOLAR/2026/089",
+      "tenderType": "OPEN",
+      "estimatedValue": 32000000.0,
+      "currency": "INR",
+      "closingAt": "2026-08-12T15:00:00+05:30",
+      "submissionMode": "PORTAL",
+      "tenderOwnerName": "P. Mehta",
+      "status": "PENDING_APPROVAL",
+      "priority": "HIGH",
+      "approvalStatus": "PENDING",
+      "health": "AMBER",
+      "completionPercent": 80,
+      "latestStatusComment": "Pending final approval"
+    },
+    {
+      "tenderId": "TND-2026-0010",
+      "name": "Substation Upgrade",
+      "customerCode": "CUS-0003",
+      "tenderReference": "SEB/SUB/2026/012",
+      "tenderType": "LIMITED",
+      "estimatedValue": 18000000.0,
+      "currency": "INR",
+      "closingAt": "2026-08-01T17:00:00+05:30",
+      "submissionMode": "PORTAL",
+      "tenderOwnerName": "R. Kumar",
+      "status": "SUBMITTED",
+      "priority": "MEDIUM",
+      "approvalStatus": "APPROVED",
+      "health": "GREEN",
+      "completionPercent": 100,
+      "latestStatusComment": "Submitted successfully"
+    }
+  ],
+  "auditEvents": [
+    {
+      "eventType": "SCHEMA_INITIALIZED",
+      "entityType": "DATABASE",
+      "entityId": "tms",
+      "actor": "seed-loader",
+      "detail": "Demo data loaded from db/seed/demo-data.json"
+    },
+    {
+      "eventType": "TENDER_CREATED",
+      "entityType": "TENDER",
+      "entityId": "TND-2026-0012",
+      "actor": "A. Sharma",
+      "detail": "Demo tender registered"
+    }
+  ],
+  "dashboardDefaults": {
+    "closingIn7Days": 0,
+    "missingMandatoryDocs": 0,
+    "overdueActions": 0,
+    "winRatePercent": 42,
+    "digestStatus": "SUCCESS",
+    "digestLastRun": "2026-08-05T08:00:00+05:30"
+  }
+}

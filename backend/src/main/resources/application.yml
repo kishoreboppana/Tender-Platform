@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tender-platform
+  profiles:
+    active: dev
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: tms
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+tender:
+  seed:
+    enabled: false
+    data-location: classpath:db/seed/demo-data.json
+    force: false
