@@ -1,0 +1,11 @@
+#!/bin/sh
+# Removes Cursor co-author trailer so GitHub "Built by" shows only you.
+# Install: copy to .git/hooks/prepare-commit-msg and chmod +x
+# Or run: scripts/install-git-hooks.ps1
+
+MSG_FILE="$1"
+if [ -f "$MSG_FILE" ]; then
+  sed -i.bak '/Co-authored-by: Cursor/d' "$MSG_FILE"
+  sed -i.bak '/cursoragent@cursor.com/d' "$MSG_FILE"
+  rm -f "${MSG_FILE}.bak"
+fi
