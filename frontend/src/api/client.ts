@@ -36,6 +36,8 @@ export interface CustomerOption {
   customerCode: string;
   name: string;
   customerType: string;
+  contactEmail?: string;
+  active: boolean;
 }
 
 export interface CreateTenderPayload {

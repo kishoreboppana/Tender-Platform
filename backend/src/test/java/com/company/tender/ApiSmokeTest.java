@@ -43,6 +43,16 @@ class ApiSmokeTest {
 
     @Test
     @Order(3)
+    void customersEndpointReturnsList() throws Exception {
+        mockMvc.perform(get("/api/customers"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.total").value(org.hamcrest.Matchers.greaterThanOrEqualTo(3)))
+                .andExpect(jsonPath("$.items[0].customerCode").exists())
+                .andExpect(jsonPath("$.items[0].active").value(true));
+    }
+
+    @Test
+    @Order(4)
     void createTenderEndpointPersistsRow() throws Exception {
         String body = "{"
                 + "\"name\":\"Test Pipeline Lot\","

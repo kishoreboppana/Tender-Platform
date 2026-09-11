@@ -25,6 +25,9 @@ export function AppLayout() {
           <NavLink to="/tenders" end className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
             Tender List
           </NavLink>
+          <NavLink to="/customers" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
+            Customer List
+          </NavLink>
           <NavLink to="/tenders/new" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
             Create Tender
           </NavLink>

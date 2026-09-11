@@ -31,6 +31,8 @@ public class CustomerController {
             row.put("customerCode", c.getCustomerCode());
             row.put("name", c.getName());
             row.put("customerType", c.getCustomerType());
+            row.put("contactEmail", c.getContactEmail());
+            row.put("active", c.isActive());
             items.add(row);
         }
 

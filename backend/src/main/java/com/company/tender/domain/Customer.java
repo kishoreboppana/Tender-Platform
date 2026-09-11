@@ -52,4 +52,12 @@ public class Customer {
     public String getCustomerType() {
         return customerType;
     }
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
 }

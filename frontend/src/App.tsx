@@ -3,6 +3,7 @@ import { AppLayout } from './components/AppLayout';
 import { CreateTenderPage } from './pages/CreateTenderPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { LoginPage } from './pages/LoginPage';
+import { CustomerListPage } from './pages/CustomerListPage';
 import { TenderListPage } from './pages/TenderListPage';
 
 function isLoggedIn(): boolean {
@@ -30,6 +31,7 @@ export function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/tenders" element={<TenderListPage />} />
         <Route path="/tenders/new" element={<CreateTenderPage />} />
+        <Route path="/customers" element={<CustomerListPage />} />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
       </Route>
       <Route path="*" element={<Navigate to="/login" replace />} />
