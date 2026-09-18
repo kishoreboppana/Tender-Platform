@@ -5,7 +5,12 @@ spring:
     password: tms
     driver-class-name: org.postgresql.Driver
   flyway:
-    enabled: false
+    enabled: true
+    schemas: tms
+    default-schema: tms
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
   jpa:
     open-in-view: false
     hibernate:
@@ -13,3 +18,7 @@ spring:
     properties:
       hibernate:
         default_schema: tms
+
+tender:
+  documents:
+    storage-dir: target/test-uploads

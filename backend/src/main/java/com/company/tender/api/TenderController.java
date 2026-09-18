@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -33,6 +34,14 @@ public class TenderController {
     @GetMapping("/api/tenders")
     public Map<String, Object> list() {
         return TenderResponseMapper.listResponse(tenderQueryService.listDemoTenders());
+    }
+
+    @GetMapping("/api/tenders/{tenderId}")
+    public Map<String, Object> get(@PathVariable String tenderId) {
+        Tender tender = tenderQueryService.getDemoTenderByBusinessId(tenderId);
+        Map<String, Object> body = new HashMap<>();
+        body.put("item", TenderResponseMapper.toDetail(tender));
+        return body;
     }
 
     @PostMapping("/api/tenders")

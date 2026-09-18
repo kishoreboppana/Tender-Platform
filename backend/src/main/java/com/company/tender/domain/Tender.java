@@ -81,6 +81,10 @@ public class Tender {
     @Version
     private Long version;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getTenderId() {
         return tenderId;
     }
@@ -117,8 +121,32 @@ public class Tender {
         return closingAt;
     }
 
+    public String getTenderReference() {
+        return tenderReference;
+    }
+
+    public String getTenderType() {
+        return tenderType;
+    }
+
+    public BigDecimal getEstimatedValue() {
+        return estimatedValue;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public String getSubmissionMode() {
+        return submissionMode;
+    }
+
     public String getApprovalStatus() {
         return approvalStatus;
+    }
+
+    public String getLatestStatusComment() {
+        return latestStatusComment;
     }
 
     public void setTenantId(UUID tenantId) {

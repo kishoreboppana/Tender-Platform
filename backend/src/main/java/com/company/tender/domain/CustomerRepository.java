@@ -11,4 +11,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Customer> findByTenantIdAndActiveTrueOrderByNameAsc(UUID tenantId);
 
     Optional<Customer> findByIdAndTenantId(Long id, UUID tenantId);
+
+    boolean existsByTenantIdAndCustomerCode(UUID tenantId, String customerCode);
 }

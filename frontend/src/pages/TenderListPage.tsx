@@ -46,7 +46,11 @@ export function TenderListPage() {
         <tbody>
           {rows.map((t) => (
             <tr key={t.tenderId}>
-              <td>{t.tenderId}</td>
+              <td>
+                <Link to={`/tenders/${encodeURIComponent(t.tenderId)}`} className="table-link">
+                  {t.tenderId}
+                </Link>
+              </td>
               <td>{t.customer}</td>
               <td>{t.name}</td>
               <td>{t.owner}</td>

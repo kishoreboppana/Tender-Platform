@@ -22,6 +22,10 @@ Thumbs.db
 # Logs
 *.log
 
+# Uploaded tender documents (local storage)
+backend/uploads/
+uploads/
+
 # Env / secrets (never commit credentials)
 .env
 .env.*

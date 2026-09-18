@@ -36,4 +36,17 @@ final class TenderResponseMapper {
         row.put("completionPercent", t.getCompletionPercent());
         return row;
     }
+
+    static Map<String, Object> toDetail(Tender t) {
+        Map<String, Object> detail = new HashMap<>(toRow(t));
+        detail.put("customerCode", t.getCustomer().getCustomerCode());
+        detail.put("tenderReference", t.getTenderReference());
+        detail.put("tenderType", t.getTenderType());
+        detail.put("estimatedValue", t.getEstimatedValue());
+        detail.put("currency", t.getCurrency());
+        detail.put("submissionMode", t.getSubmissionMode());
+        detail.put("approvalStatus", t.getApprovalStatus());
+        detail.put("latestStatusComment", t.getLatestStatusComment());
+        return detail;
+    }
 }

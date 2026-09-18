@@ -60,4 +60,28 @@ public class Customer {
     public boolean isActive() {
         return active;
     }
+
+    public void setTenantId(java.util.UUID tenantId) {
+        this.tenantId = tenantId;
+    }
+
+    public void setCustomerCode(String customerCode) {
+        this.customerCode = customerCode;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCustomerType(String customerType) {
+        this.customerType = customerType;
+    }
+
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 }

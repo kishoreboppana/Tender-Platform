@@ -1,6 +1,7 @@
 package com.company.tender.domain;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,4 +20,6 @@ public interface TenderRepository extends JpaRepository<Tender, Long> {
     long countRedHealth(@Param("tenantId") UUID tenantId);
 
     boolean existsByTenantIdAndTenderId(UUID tenantId, String tenderId);
+
+    Optional<Tender> findByTenantIdAndTenderId(UUID tenantId, String tenderId);
 }

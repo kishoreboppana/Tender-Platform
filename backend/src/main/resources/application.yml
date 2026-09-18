@@ -6,6 +6,10 @@ spring:
     name: tender-platform
   profiles:
     active: dev
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
   jpa:
     open-in-view: false
     hibernate:
@@ -25,3 +29,6 @@ tender:
     enabled: false
     data-location: classpath:db/seed/demo-data.json
     force: false
+  documents:
+    storage-dir: uploads
+    max-size-bytes: 5242880

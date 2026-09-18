@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.company.tender.domain.Tenant;
 import com.company.tender.domain.TenantRepository;
@@ -45,6 +47,12 @@ public class TenderQueryService {
 
     public List<Tender> listDemoTenders() {
         return tenderRepository.findByTenantIdOrderByClosingAtAsc(DEMO_TENANT_ID);
+    }
+
+    public Tender getDemoTenderByBusinessId(String tenderId) {
+        return tenderRepository.findByTenantIdAndTenderId(DEMO_TENANT_ID, tenderId)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND, "Tender not found: " + tenderId));
     }
 
     public Map<String, Object> dashboardSummary() {

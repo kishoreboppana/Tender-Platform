@@ -1,4 +1,5 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { Sidebar } from './Sidebar';
 
 export function AppLayout() {
   const navigate = useNavigate();
@@ -18,20 +19,7 @@ export function AppLayout() {
         </span>
       </header>
       <div className="layout">
-        <nav className="sidebar">
-          <NavLink to="/dashboard" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
-            Dashboard
-          </NavLink>
-          <NavLink to="/tenders" end className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
-            Tender List
-          </NavLink>
-          <NavLink to="/customers" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
-            Customer List
-          </NavLink>
-          <NavLink to="/tenders/new" className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}>
-            Create Tender
-          </NavLink>
-        </nav>
+        <Sidebar />
         <main className="content">
           <div className="phase-banner">
             React + Vite · Spring Boot API · PostgreSQL (demo seed data)
